@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { URL, fileURLToPath } from "node:url";
 import eslintPlugin from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
@@ -17,4 +18,17 @@ export default defineConfig({
       ],
     }),
   ],
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      //define global scss variable
+      scss: {
+        additionalData: `@import "@/common/styles/_mixin.scss";`,
+      },
+    },
+  },
 });

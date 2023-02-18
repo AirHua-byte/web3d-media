@@ -80,7 +80,7 @@ onMounted(() => {
   <div ref="threeRef" class="three"></div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .three {
   width: 400px;
   height: 250px;

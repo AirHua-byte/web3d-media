@@ -21,6 +21,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      // 将 ammo.js 模块路径指向安装的包
+      // "ammo.js": "ammo.js/builds/ammo.js",
     },
   },
   css: {
